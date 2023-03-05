@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" async></script>
+    <link rel="icon" type="image/x-icon" href="images/drag-indicator.svg">
+    <title>Drag and Drop lists</title>
+</head>
+<body class="chess-pieces">
+
+<h2 class="content-change-link">UFC Fighter List</h2>
+
+<section class="sortable-list chess">
+    <div class="compare-container">
+        <h1>Compare Piece Values</h1>
+
+        <div class="compare-box-container">
+            <div class="flex gap-sm flex-col first-comparison-container">
+                <div class="draggable-box" draggable="true">
+                    <div class="inner-box"></div>
+                </div>
+                <div class="flex gap-sm justify-between-row p-x-sm" style="height: 2rem">
+                    <span class="first-comparison-piece-name"></span>
+                    <span class="first-comparison-piece-worth"></span>
+                </div>
+            </div>
+
+            <div class="flex gap-sm flex-col">
+                <div class="draggable-box second-comparison-container" draggable="true">
+                    <div class="inner-box"></div>
+                </div>
+                <div class="flex gap-sm justify-between-row p-x-sm">
+                    <span class="second-comparison-piece-name"></span>
+                    <span class="second-comparison-piece-worth"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- First Row -->
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/pawn.svg" alt="pawn"></div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/rook.svg" alt="rook"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/knight.svg" alt="knight"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/bishop.svg" alt="bishop"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/queen.svg" alt="queen"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/king.svg" alt="king"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/bishop.svg" alt="bishop"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/knight.svg" alt="knight"></div>
+    </div>
+    <div class="draggable-box" draggable="true">
+        <div class="inner-box"><img class="piece-image" src="images/chess-pieces/rook.svg" alt="rook"></div>
+    </div>
+</section>
+
+<div class="ufc-fighter-list-container">
+    <h1>UFC fighters</h1>
+
+    <ul class="sortable-list ufc-fighters">
+        <li class="item" draggable="true">
+            <div class="details">
+                <div class="fighter-details">
+                    <img src="images/flags/ireland.png" alt="Ireland flag">Conor McGregor
+                </div>
+                <img src="images/drag-indicator.svg" alt="Drag Indicator"/>
+            </div>
+        </li>
+        <li class="item" draggable="true">
+            <div class="details">
+                <div class="fighter-details">
+                    <img src="images/flags/united-states.png" alt="United State of America flag">John Jones
+                </div>
+                <img src="images/drag-indicator.svg" alt="Drag Indicator"/>
+            </div>
+        </li>
+        <li class="item" draggable="true">
+            <div class="details">
+                <div class="fighter-details">
+                    <img src="images/flags/brazil.png" alt="Brazil flag">Charles Oliveira
+                </div>
+                <img src="images/drag-indicator.svg" alt="Drag Indicator"/>
+            </div>
+        </li>
+        <li class="item" draggable="true">
+            <div class="details">
+                <div class="fighter-details">
+                    <img src="images/flags/united-states.png" alt="United State of America flag">Colby Covington
+                </div>
+                <img src="images/drag-indicator.svg" alt="Drag Indicator"/>
+            </div>
+        </li>
+        <li class="item" draggable="true">
+            <div class="details">
+                <div class="fighter-details">
+                    <img src="images/flags/russia.png" alt="Russia flag">Khabib Nurmagomedov
+                </div>
+                <img src="images/drag-indicator.svg" alt="Drag Indicator"/>
+            </div>
+        </li>
+        <li class="item" draggable="true">
+            <div class="details">
+                <div class="fighter-details">
+                    <img src="images/flags/united-states.png" alt="United State of America flag">Michael Chandler
+                </div>
+                <img src="images/drag-indicator.svg" alt="Drag Indicator"/>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
