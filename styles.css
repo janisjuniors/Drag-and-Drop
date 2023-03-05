@@ -75,6 +75,7 @@ body {
     align-items: center;
     width: 6.5rem;
     height: 6.5rem;
+    cursor: grab;
 }
 
 .inner-box:hover {
