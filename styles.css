@@ -77,11 +77,11 @@ body {
 }
 
 .draggable-box {
-    box-shadow: inset 0 1px 4px rgba(211, 211, 211, 0.53);
+    box-shadow: inset 0 1px 4px rgba(42, 42, 42, 0.41);
 }
 
 .draggable-box.hovered {
-    box-shadow: inset 0 0 0 5px #ffffff;
+    box-shadow: inset 0 0 0 6px #ffffff;
 }
 
 .piece-image {

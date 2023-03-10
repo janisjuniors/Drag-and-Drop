@@ -42,38 +42,16 @@ boxes.forEach(box => {
         const dropElementPiece = box.querySelector('img')?.alt;
 
         if (box.innerHTML !== hoverElement.innerHTML) {
-            const boxInnerHtml = box.innerHTML;
+            const boxInnerHTML = box.innerHTML;
             box.innerHTML = hoverElement.innerHTML;
-            hoverElement.innerHTML = boxInnerHtml;
-        }
 
-        const firstComparisonPiece = document.querySelector('.first-comparison-container').querySelector('img')?.alt;
-        const secondComparisonPiece = document.querySelector('.second-comparison-container').querySelector('img')?.alt;
-
-        const firstComparisonPieceName = document.querySelector('.first-comparison-piece-name');
-        const firstComparisonPieceValue = document.querySelector('.first-comparison-piece-worth');
-
-        const secondComparisonPieceName = document.querySelector('.second-comparison-piece-name');
-        const secondComparisonPieceValue = document.querySelector('.second-comparison-piece-worth');
-
-        if (!!firstComparisonPiece) {
-            firstComparisonPieceName.innerHTML = capitalizeFirstLetter(firstComparisonPiece);
-            firstComparisonPieceValue.innerHTML = pieceValues[firstComparisonPiece];
-        } else {
-            resetElementInnerHTML([firstComparisonPieceName, firstComparisonPieceValue]);
-        }
-
-        if (!!secondComparisonPiece) {
-            secondComparisonPieceName.innerHTML = capitalizeFirstLetter(secondComparisonPiece);
-            secondComparisonPieceValue.innerHTML = pieceValues[secondComparisonPiece];
-        } else {
-            resetElementInnerHTML([secondComparisonPieceValue, secondComparisonPieceName]);
-        }
-
-        if (pieceValues[hoverElementPiece] > pieceValues[dropElementPiece]) {
-            await captureSound.play();
-        } else {
-            await moveSound.play();
+            if (!dropElementPiece) {
+                hoverElement.innerHTML = boxInnerHTML;
+                await moveSound.play();
+            } else {
+                hoverElement.innerHTML = '<div class="inner-box"></div>';
+                await captureSound.play();
+            }
         }
     });
 });
