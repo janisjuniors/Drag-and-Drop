@@ -1,4 +1,4 @@
-# Drag and drop sortable lists
+# Drag and Drop Demo
 A basic example of <a href="https://janisjuniors.github.io/Drag-and-Drop/">drag-and-drop sortable lists</a> made with vanilla javascript, using the HTML Drag and Drop API. 
 
 ### Interactive Chess Board
