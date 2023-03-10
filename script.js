@@ -2,7 +2,7 @@
 const contentChangeLink = document.querySelector('.content-change-link');
 contentChangeLink.addEventListener('click', () => {
     document.body.classList.toggle('chess-pieces');
-    contentChangeLink.innerHTML = document.body.classList.contains('chess-pieces') ? 'UFC Fighter List' : 'Chess Pieces';
+    contentChangeLink.innerHTML = document.body.classList.contains('chess-pieces') ? 'UFC Fighter List' : 'Chess Board';
 });
 
 /** Chess Piece Drag and Drop Logic. */
