@@ -52,11 +52,11 @@ boxes.forEach(box => {
             box.innerHTML = hoverElement.innerHTML;
 
             if (!dropElementPiece) {
+                await playAudio(moveSound);
                 hoverElement.innerHTML = boxInnerHTML;
-                await moveSound.play();
             } else {
+                await playAudio(captureSound);
                 hoverElement.innerHTML = emptySquare;
-                await captureSound.play();
             }
         }
     });
@@ -70,6 +70,16 @@ const bothElementsAreTheSameColor = (hoverElement, dropElement) => {
     }
 
     return hoverElement?.toLowerCase().includes('black') && dropElement?.toLowerCase().includes('black');
+};
+
+const stopAndResetAudio = (audio) => {
+    audio.pause();
+    audio.currentTime = 0;
+};
+
+const playAudio = async (audio) => {
+    stopAndResetAudio(audio);
+    await audio.play();
 };
 
 /** UFC Fighter List Logic. */
