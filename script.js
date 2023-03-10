@@ -5,6 +5,8 @@ contentChangeLink.addEventListener('click', () => {
     contentChangeLink.innerHTML = document.body.classList.contains('chess-pieces') ? 'UFC Fighter List' : 'Chess Board';
 });
 
+const emptySquare = '<div class="inner-box"></div>';
+
 /** Chess Piece Drag and Drop Logic. */
 const boxes = document.querySelectorAll('.draggable-box');
 let hoverElement;
@@ -41,7 +43,11 @@ boxes.forEach(box => {
         const hoverElementPiece = hoverElement.querySelector('img')?.alt;
         const dropElementPiece = box.querySelector('img')?.alt;
 
-        if (box.innerHTML !== hoverElement.innerHTML) {
+        if (bothElementsAreTheSameColor(hoverElementPiece, dropElementPiece)) {
+            return;
+        }
+
+        if (box.innerHTML !== hoverElement.innerHTML && !isSquareEmpty(hoverElement)) {
             const boxInnerHTML = box.innerHTML;
             box.innerHTML = hoverElement.innerHTML;
 
@@ -49,16 +55,22 @@ boxes.forEach(box => {
                 hoverElement.innerHTML = boxInnerHTML;
                 await moveSound.play();
             } else {
-                hoverElement.innerHTML = '<div class="inner-box"></div>';
+                hoverElement.innerHTML = emptySquare;
                 await captureSound.play();
             }
         }
     });
 });
 
-const capitalizeFirstLetter = (string) => string?.charAt(0).toUpperCase() + string?.slice(1);
-const resetElementInnerHTML = (arrayOfElements) => arrayOfElements.forEach(element => element.innerHTML = '');
+const isSquareEmpty = (htmlElement) => htmlElement.innerHTML === emptySquare;
 
+const bothElementsAreTheSameColor = (hoverElement, dropElement) => {
+    if (hoverElement?.toLowerCase().includes('white') && dropElement?.toLowerCase().includes('white')) {
+        return true;
+    }
+
+    return hoverElement?.toLowerCase().includes('black') && dropElement?.toLowerCase().includes('black');
+};
 
 /** UFC Fighter List Logic. */
 const sortableList = document.querySelector('.sortable-list.ufc-fighters');
